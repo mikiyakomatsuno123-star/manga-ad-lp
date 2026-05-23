@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RE:BASE.design｜漫画広告チラシ制作｜A4 1枚10,000円</title>
+  <meta name="description" content="会社紹介、商品PR、サービス説明、講座案内を、読まれる漫画広告チラシへ。A4漫画広告チラシを1枚10,000円で制作します。">
+
+  <meta property="og:title" content="RE:BASE.design｜漫画広告チラシ制作｜A4 1枚10,000円">
+  <meta property="og:description" content="会社紹介、商品PR、サービス説明、講座案内を、読まれる漫画広告チラシへ。A4漫画広告チラシを1枚10,000円で制作します。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:site_name" content="RE:BASE.design">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root {
+      --navy: #102033;
+      --white: #ffffff;
+      --orange: #F28C28;
+      --cream: #FFF4E6;
+      --gold: #D98A1E;
+      --text: #243044;
+      --muted: #657286;
+      --line: rgba(16, 32, 51, 0.12);
+      --shadow: 0 16px 36px rgba(16, 32, 51, 0.12);
+      --strong-shadow: 0 22px 50px rgba(16, 32, 51, 0.18);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.75;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .brand-main {
+      color: var(--navy);
+      font-size: 1.12rem;
+      font-weight: 950;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.88rem;
+      color: var(--navy);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .header-nav a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .header-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: width 0.2s ease;
+    }
+
+    .header-nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 950;
+      letter-spacing: 0.04em;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--strong-shadow);
+    }
+
+    .btn-apply {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(242, 140, 40, 0.34);
+      animation: pulseCta 2.4s ease-in-out infinite;
+    }
+
+    .btn-apply:hover {
+      background: #ff9b39;
+    }
+
+    @keyframes pulseCta {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.035);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-head {
+      max-width: 820px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 0.82rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.85rem, 3.8vw, 3rem);
+      line-height: 1.18;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .section-text {
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-weight: 650;
+      max-width: 760px;
+    }
+
+    .hero {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(242, 140, 40, 0.18), transparent 34%),
+        linear-gradient(135deg, #ffffff 0%, #fff9f0 48%, #f8fbff 100%);
+      padding: 74px 0 88px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(242, 140, 40, 0.12);
+      color: var(--gold);
+      font-weight: 950;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(242, 140, 40, 0.18);
+    }
+
+    .hero h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.25rem, 5.2vw, 4.55rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      font-weight: 950;
+    }
+
+    .hero-lead {
+      margin: 22px 0 0;
+      max-width: 650px;
+      color: #3b4658;
+      font-size: clamp(1.04rem, 2vw, 1.25rem);
+      font-weight: 650;
+    }
+
+    .price-badge {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      max-width: 560px;
+      margin: 30px 0 22px;
+      padding: 18px 20px;
+      background: var(--white);
+      border: 1px solid rgba(242, 140, 40, 0.25);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .price-mark {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 1.2rem;
+      line-height: 1.1;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .price-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.06rem;
+      font-weight: 950;
+    }
+
+    .price-main {
+      margin: 2px 0 0;
+      color: var(--orange);
+      font-size: clamp(1.6rem, 3.5vw, 2.35rem);
+      line-height: 1.12;
+      font-weight: 950;
+    }
+
+    .hero-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .small-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .mail-link {
+      color: var(--orange);
+      font-weight: 950;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      word-break: break-all;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(16, 32, 51, 0.06);
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(16, 32, 51, 0.08);
+      border-radius: 30px;
+      padding: 18px;
+      box-shadow: var(--strong-shadow);
+    }
+
+    .image-frame {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(16, 32, 51, 0.96), rgba(16, 32, 51, 0.78)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.06) 0, rgba(255, 255, 255, 0.06) 8px, transparent 8px, transparent 16px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: grid;
+      place-items: center;
+    }
+
+    .image-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      background: var(--cream);
+    }
+
+    .placeholder-label {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+      text-align: center;
+      padding: 26px;
+      display: grid;
+      gap: 7px;
+      place-items: center;
+    }
+
+    .placeholder-label strong {
+      font-size: 1.45rem;
+      letter-spacing: 0.08em;
+    }
+
+    .placeholder-label span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .hero-image-frame {
+      min-height: 440px;
+    }
+
+    .hero-mini-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mini-pill {
+      background: var(--cream);
+      border: 1px solid rgba(242, 140, 40, 0.18);
+      border-radius: 15px;
+      padding: 11px 12px;
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      box-shadow: 0 12px 28px rgba(16, 32, 51, 0.08);
+      min-height: 190px;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      color: var(--orange);
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.05rem;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 620;
+    }
+
+    .samples {
+      background: linear-gradient(180deg, var(--cream) 0%, #ffffff 100%);
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .sample-card {
+      background: var(--white);
+      border: 1px solid rgba(16, 32, 51, 0.1);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(16, 32, 51, 0.1);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sample-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--strong-shadow);
+    }
+
+    .sample-image {
+      min-height: 220px;
+      border-radius: 0;
+    }
+
+    .sample-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      flex: 1;
+    }
+
+    .sample-number {
+      width: fit-content;
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(242, 140, 40, 0.12);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 950;
+    }
+
+    .sample-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.18rem;
+      line-height: 1.4;
+      font-weight: 950;
+    }
+
+    .sample-copy {
+      margin: 0;
+      color: var(--orange);
+      font-weight: 950;
+      line-height: 1.45;
+    }
+
+    .sample-meta {
+      display: grid;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 10px;
+      font-size: 0.9rem;
+      align-items: start;
+    }
+
+    .meta-row dt {
+      color: var(--navy);
+      font-weight: 950;
+    }
+
+    .meta-row dd {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 620;
+    }
+
+    .design-example {
+      margin: 54px 0 0;
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid rgba(16, 32, 51, 0.1);
+      border-radius: 30px;
+      box-shadow: var(--strong-shadow);
+    }
+
+    .design-example-head {
+      text-align: center;
+      margin: 0 auto 28px;
+    }
+
+    .design-example-head h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      line-height: 1.25;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .design-example-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      align-items: start;
+    }
+
+    .design-example-card {
+      overflow: hidden;
+      background: var(--cream);
+      border: 1px solid rgba(16, 32, 51, 0.12);
+      border-radius: 26px;
+      box-shadow: 0 16px 32px rgba(16, 32, 51, 0.12);
+    }
+
+    .design-example-image {
+      position: relative;
+      min-height: 520px;
+      background: #fff;
+    }
+
+    .design-example-image img {
+      position: static;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .design-example-caption {
+      padding: 18px 20px 22px;
+      background: var(--white);
+      border-top: 1px solid rgba(16, 32, 51, 0.08);
+    }
+
+    .design-example-caption h4 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.08rem;
+      font-weight: 950;
+    }
+
+    .sample-cta-box {
+      max-width: 780px;
+      margin: 42px auto 0;
+      background: var(--white);
+      border: 1px solid rgba(242, 140, 40, 0.18);
+      border-radius: 26px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .sample-cta-box h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.38rem;
+      font-weight: 950;
+    }
+
+    .sample-cta-box p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .pricing-card {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 28px;
+      background: var(--navy);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--strong-shadow);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .pricing-main {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 26px;
+      padding: 28px;
+    }
+
+    .pricing-main h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.35;
+    }
+
+    .pricing-yen {
+      margin: 14px 0 8px;
+      color: var(--orange);
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .pricing-main p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-weight: 750;
+    }
+
+    .pricing-details {
+      display: grid;
+      gap: 18px;
+    }
+
+    .detail-panel,
+    .contact-info-box,
+    .form-items,
+    .notice-box {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .detail-panel h4,
+    .contact-info-box h3,
+    .form-items h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 1.08rem;
+      font-weight: 950;
+    }
+
+    .check-list,
+    .plain-list,
+    .form-list,
+    .notice-list,
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+    }
+
+    .check-list li,
+    .plain-list li,
+    .form-list li,
+    .notice-list li,
+    .contact-list li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 950;
+    }
+
+    .plain-list li::before,
+    .form-list li::before,
+    .notice-list li::before,
+    .contact-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.78em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    .price-cta {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .flow {
+      background: var(--cream);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step-card {
+      background: var(--white);
+      border: 1px solid rgba(16, 32, 51, 0.08);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      box-shadow: 0 14px 28px rgba(16, 32, 51, 0.08);
+    }
+
+    .step-label {
+      display: inline-flex;
+      min-width: 76px;
+      justify-content: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 950;
+      margin-bottom: 14px;
+    }
+
+    .step-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 620;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .notice {
+      background: linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
+    }
+
+    .law-card {
+      background: var(--cream);
+      border: 1px solid rgba(242, 140, 40, 0.2);
+      border-radius: 28px;
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .law-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .law-table th,
+    .law-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 15px 16px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    .law-table th {
+      width: 230px;
+      color: var(--navy);
+      background: rgba(16, 32, 51, 0.04);
+      font-weight: 950;
+    }
+
+    .law-table td {
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .law-table tr:last-child th,
+    .law-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .site-footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 44px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-brand strong {
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-brand span,
+    .footer-brand a {
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 650;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+      text-align: right;
+      font-weight: 850;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.86);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .copyright {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.88rem;
+      font-weight: 650;
+    }
+
+    .final-cta {
+      background:
+        radial-gradient(circle at 18% 20%, rgba(242, 140, 40, 0.22), transparent 32%),
+        linear-gradient(135deg, #fffaf2 0%, #ffffff 100%);
+      padding: 74px 0;
+      text-align: center;
+    }
+
+    .final-cta-box {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid rgba(242, 140, 40, 0.22);
+      border-radius: 32px;
+      padding: 40px 28px;
+      box-shadow: var(--strong-shadow);
+    }
+
+    .final-cta-box h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(1.85rem, 4vw, 3rem);
+      line-height: 1.18;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .final-cta-box p {
+      margin: 16px auto 0;
+      max-width: 660px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .image-error {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+      padding: 20px;
+      background: #fff7ed;
+      color: #b45309;
+      text-align: center;
+      font-weight: 900;
+      border: 2px dashed rgba(242, 140, 40, 0.45);
+    }
+
+    @media (max-width: 1080px) {
+      .header-nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .pricing-card,
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .sample-grid,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .design-example-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        min-height: auto;
+        padding: 12px 0;
+      }
+
+      .header-actions {
+        display: none;
+      }
+
+      .hero {
+        padding: 48px 0 62px;
+      }
+
+      .section {
+        padding: 66px 0;
+      }
+
+      .price-badge {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-mini-info,
+      .feature-grid,
+      .sample-grid,
+      .steps,
+      .design-example-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .design-example {
+        padding: 22px;
+      }
+
+      .pricing-card {
+        padding: 22px;
+      }
+
+      .law-card {
+        padding: 18px;
+      }
+
+      .law-table,
+      .law-table tbody,
+      .law-table tr,
+      .law-table th,
+      .law-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="RE:BASE.design トップへ">
+        <span class="brand-main">RE:BASE.design</span>
+        <span class="brand-sub">RE:BASE企画／運営：株式会社陸自不動産</span>
+      </a>
+
+      <nav class="header-nav" aria-label="主要メニュー">
+        <a href="#overview">サービス概要</a>
+        <a href="#samples">サンプル</a>
+        <a href="#price">料金</a>
+        <a href="#flow">流れ</a>
+        <a href="#contact">連絡先</a>
+        <a href="#law">特商法表記</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">A4漫画広告チラシ制作｜1枚 10,000円</span>
+          <h1>伝えたい内容を、<br>読まれる漫画広告へ。</h1>
+          <p class="hero-lead">会社紹介、商品PR、サービス説明、講座案内まで。目的に合うタイプを選ぶだけで、A4漫画広告チラシを制作します。</p>
+
+          <div class="price-badge" aria-label="価格案内">
+            <div class="price-mark">A4<br>1枚</div>
+            <div>
+              <p class="price-title">A4漫画広告チラシ制作</p>
+              <p class="price-main">1枚 10,000円</p>
+              <p class="hero-note">PDF・PNG納品／QRコード1か所／サンプルタイプ選択式</p>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+          </div>
+
+          <p class="small-note">
+            複数枚の広告制作、法人・店舗向けの継続制作をご希望の場合は、下記メールにてご相談ください。<br>
+            <a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a>
+          </p>
+
+          <div class="tag-row">
+            <span class="tag">会社紹介</span>
+            <span class="tag">商品PR</span>
+            <span class="tag">サービス説明</span>
+            <span class="tag">講座案内</span>
+            <span class="tag">地域店舗PR</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="ヒーロー画像">
+          <div class="image-frame hero-image-frame">
+            <img
+              class="smart-img"
+              data-srcs="images/hero-image.jpg|images/hero-image.png|images/hero.jpg|images/hero.png"
+              alt="RE:BASE.design 漫画広告制作ヒーロー画像"
+            >
+            <div class="placeholder-label">
+              <strong>Hero Image</strong>
+              <span>images/hero-image</span>
+            </div>
+          </div>
+
+          <div class="hero-mini-info">
+            <div class="mini-pill">3〜7コマ程度</div>
+            <div class="mini-pill">PDF・PNG納品</div>
+            <div class="mini-pill">修正1回まで</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">SERVICE</span>
+          <h2 class="section-title">シンプルに選べる、漫画広告制作サービス</h2>
+          <p class="section-text">長い説明文だけでは伝わりにくい商品・サービス・講座内容を、読み手が理解しやすい漫画広告チラシとして整理します。</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">01</div>
+            <h3>A4漫画広告チラシを1枚10,000円で制作</h3>
+            <p>主力商品は「A4縦型漫画広告チラシ1枚制作」に統一。依頼内容を分かりやすく進められます。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">02</div>
+            <h3>内容に応じて3〜7コマ程度で構成</h3>
+            <p>読みやすさを重視し、説明過多になりすぎない構成で広告チラシ化します。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">03</div>
+            <h3>サンプルタイプを選択</h3>
+            <p>10種類のサンプルカードから希望タイプを選べるため、初心者でも依頼内容を伝えやすくなります。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">04</div>
+            <h3>PDF・PNG納品・QRコード1か所</h3>
+            <p>QRコード掲載は原則1か所。読み手が迷わない導線設計を基本にします。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">05</div>
+            <h3>会社紹介・商品PRに対応</h3>
+            <p>会社の想い、商品の魅力、店舗案内、キャンペーン情報などを漫画広告へ変換します。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">06</div>
+            <h3>サービス説明・講座案内に対応</h3>
+            <p>難しい内容をやさしく伝えたい士業・不動産・講座・スクール系にも活用できます。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">07</div>
+            <h3>支払い方法は銀行振込のみ</h3>
+            <p>制作開始前に指定口座へ振込いただく流れです。</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">08</div>
+            <h3>軽微な修正1回まで</h3>
+            <p>大幅な構成変更、内容量が多い場合、修正2回目以降などは別途相談となります。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section samples" id="samples">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">SAMPLE TYPES</span>
+          <h2 class="section-title">10種類のサンプルカードから、希望タイプを選べます</h2>
+          <p class="section-text">分類を増やしすぎず、依頼者が選びやすい10タイプに整理しています。</p>
+        </div>
+
+        <div class="sample-grid">
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-01.jpg|images/sample-01.png|images/sample-01.jpeg|images/sample-01.webp" alt="お店に人を呼ぶ漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 01</strong><span>images/sample-01</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 01</span>
+              <h3>お店に人を呼ぶ漫画広告</h3>
+              <p class="sample-copy">見た人を「行ってみたい」に変える。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>標準型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>飲食店、美容室、整体院、学習塾、地域店舗など</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>来店・予約・問い合わせの獲得</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-02.jpg|images/sample-02.png|images/sample-02.jpeg|images/sample-02.webp" alt="商品の魅力が伝わる漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 02</strong><span>images/sample-02</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 02</span>
+              <h3>商品の魅力が伝わる漫画広告</h3>
+              <p class="sample-copy">商品の良さを、ひと目でわかる物語に。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>標準型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>物販、通販、新商品、キャンペーン商品など</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>商品の魅力を短時間で伝える</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-03.jpg|images/sample-03.png|images/sample-03.jpeg|images/sample-03.webp" alt="難しいサービスをやさしく伝える漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 03</strong><span>images/sample-03</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 03</span>
+              <h3>難しいサービスをやさしく伝える漫画広告</h3>
+              <p class="sample-copy">説明しにくい内容を、読める広告に変える。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>標準型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>士業、コンサル、不動産、保険、修理業、介護サービスなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>難しい内容を分かりやすく説明する</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-04.jpg|images/sample-04.png|images/sample-04.jpeg|images/sample-04.webp" alt="講座の価値が伝わる漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 04</strong><span>images/sample-04</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 04</span>
+              <h3>講座の価値が伝わる漫画広告</h3>
+              <p class="sample-copy">学ぶ前の不安を、申し込み前の納得に変える。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>標準型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>AI講座、学習塾、資格講座、セミナーなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>受講後の変化や学ぶ価値を伝える</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-05.jpg|images/sample-05.png|images/sample-05.jpeg|images/sample-05.webp" alt="会社の信頼が伝わる漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 05</strong><span>images/sample-05</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 05</span>
+              <h3>会社の信頼が伝わる漫画広告</h3>
+              <p class="sample-copy">会社の想いと人柄を、短い物語で伝える。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>標準型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>会社紹介、代表者紹介、理念紹介、採用案内など</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>安心感・信頼感・人柄を伝える</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-06.jpg|images/sample-06.png|images/sample-06.jpeg|images/sample-06.webp" alt="パッと目を引くポップ漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 06</strong><span>images/sample-06</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 06</span>
+              <h3>パッと目を引くポップ漫画広告</h3>
+              <p class="sample-copy">明るく楽しく、まず見てもらう。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>ポップ型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>イベント、キャンペーン、地域店舗、若年層向けサービスなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>明るく目立たせ、気軽な問い合わせや来店につなげる</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-07.jpg|images/sample-07.png|images/sample-07.jpeg|images/sample-07.webp" alt="やさしく相談したくなる漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 07</strong><span>images/sample-07</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 07</span>
+              <h3>やさしく相談したくなる漫画広告</h3>
+              <p class="sample-copy">不安をやわらげ、相談の一歩をつくる。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>やわらか型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>美容、エステ、子育て支援、介護、カウンセリング、スクールなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>不安を和らげ、相談しやすい印象を与える</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-08.jpg|images/sample-08.png|images/sample-08.jpeg|images/sample-08.webp" alt="レトロで印象に残る漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 08</strong><span>images/sample-08</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 08</span>
+              <h3>レトロで印象に残る漫画広告</h3>
+              <p class="sample-copy">懐かしさと上品さで、記憶に残す。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>大正・昭和ロマン型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>カフェ、和風店舗、老舗店舗、地域ビジネス、個人ブランドなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>懐かしさ・上品さ・個性を出す</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-09.jpg|images/sample-09.png|images/sample-09.jpeg|images/sample-09.webp" alt="和のインパクトで惹きつける漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 09</strong><span>images/sample-09</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 09</span>
+              <h3>和のインパクトで惹きつける漫画広告</h3>
+              <p class="sample-copy">日本らしさを、強い印象に変える。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>浮世絵型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>観光、和風商品、地域PR、老舗店舗、文化系サービス、海外向けPRなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>日本らしさ・伝統感・地域性を伝える</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="image-frame sample-image">
+              <img class="smart-img" data-srcs="images/sample-10.jpg|images/sample-10.png|images/sample-10.jpeg|images/sample-10.webp" alt="世界観で魅せるアート漫画広告 サンプル画像">
+              <div class="placeholder-label"><strong>Sample 10</strong><span>images/sample-10</span></div>
+            </div>
+            <div class="sample-body">
+              <span class="sample-number">TYPE 10</span>
+              <h3>世界観で魅せるアート漫画広告</h3>
+              <p class="sample-copy">説明より先に、ブランドの空気感を伝える。</p>
+              <dl class="sample-meta">
+                <div class="meta-row"><dt>画風</dt><dd>アート型</dd></div>
+                <div class="meta-row"><dt>対象例</dt><dd>アート系サービス、クリエイター、ブランディング重視の商品、高価格帯サービスなど</dd></div>
+                <div class="meta-row"><dt>目的</dt><dd>独自性や世界観を印象づける</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+
+        <section class="design-example" aria-label="A4縦型チラシの制作イメージ例">
+          <div class="design-example-head">
+            <span class="section-label">DESIGN EXAMPLE</span>
+            <h3>A4縦型チラシの制作イメージ例</h3>
+          </div>
+
+          <div class="design-example-grid">
+            <article class="design-example-card">
+              <div class="design-example-image">
+                <img
+                  class="smart-img"
+                  data-srcs="images/a4-sample-01.jpg|images/a4-sample-01.png|images/a4-sample-01.jpeg|images/a4-sample-01.webp|images/a4-sample-01.png.jpg|images/a4-sample-01.jpg.jpg"
+                  alt="A4縦型チラシの制作イメージ例1"
+                >
+              </div>
+              <div class="design-example-caption">
+                <h4>制作イメージ例 01</h4>
+              </div>
+            </article>
+
+            <article class="design-example-card">
+              <div class="design-example-image">
+                <img
+                  class="smart-img"
+                  data-srcs="images/a4-sample-02.jpg|images/a4-sample-02.png|images/a4-sample-02.jpeg|images/a4-sample-02.webp|images/a4-sample-02.png.jpg|images/a4-sample-02.jpg.jpg"
+                  alt="A4縦型チラシの制作イメージ例2"
+                >
+              </div>
+              <div class="design-example-caption">
+                <h4>制作イメージ例 02</h4>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="sample-cta-box">
+          <h3>気になるタイプ番号を選んでお申込みください</h3>
+          <p>フォーム内で希望タイプや、漫画の主題にしたいアピールポイントを選択できます。</p>
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+          </div>
+          <p class="small-note">
+            複数枚の広告制作、法人・店舗向けの継続制作をご希望の場合は、下記メールにてご相談ください。<br>
+            <a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="price">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">PRICE</span>
+          <h2 class="section-title">料金案内</h2>
+          <p class="section-text">主力商品は、A4漫画広告チラシ制作1枚です。支払い方法は銀行振込のみです。</p>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-main">
+            <h3>A4漫画広告チラシ制作</h3>
+            <div class="pricing-yen">1枚 10,000円</div>
+            <p>PDF・PNG納品／サンプルタイプ選択式／軽微な修正1回まで</p>
+            <div class="tag-row">
+              <span class="tag" style="background: rgba(255,255,255,0.12); color: #fff;">銀行振込のみ</span>
+              <span class="tag" style="background: rgba(255,255,255,0.12); color: #fff;">QRコード1か所</span>
+            </div>
+          </div>
+
+          <div class="pricing-details">
+            <div class="detail-panel">
+              <h4>含まれる内容</h4>
+              <ul class="check-list">
+                <li>A4縦型漫画広告チラシ1枚</li>
+                <li>内容に応じて3〜7コマ程度</li>
+                <li>PDF・PNG納品</li>
+                <li>QRコード1か所</li>
+                <li>サンプルタイプ選択式</li>
+                <li>軽微な修正1回まで</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h4>支払い方法</h4>
+              <ul class="plain-list">
+                <li>銀行振込のみ</li>
+                <li>制作開始前に指定口座へ振込</li>
+              </ul>
+            </div>
+
+            <div class="detail-panel">
+              <h4>別途相談</h4>
+              <ul class="plain-list">
+                <li>大幅な構成変更</li>
+                <li>複数QRコード掲載</li>
+                <li>内容量が多い場合</li>
+                <li>修正2回目以降</li>
+                <li>急ぎ納品</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-cta">
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+          </div>
+          <p class="small-note">制作開始後のキャンセル・返金は応じかねます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow" id="flow">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">FLOW</span>
+          <h2 class="section-title">申込みの流れ</h2>
+          <p class="section-text">サンプルタイプを選び、必要情報を入力いただいた後、内容確認を経て制作へ進みます。</p>
+        </div>
+
+        <div class="steps">
+          <article class="step-card">
+            <span class="step-label">STEP 1</span>
+            <h3>サンプルタイプを選ぶ</h3>
+            <p>10種類の中から、商品・サービスに近いタイプを選択します。</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-label">STEP 2</span>
+            <h3>申込みフォームに入力する</h3>
+            <p>希望タイプ、業種、アピールポイント、QRコード先などを入力します。</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-label">STEP 3</span>
+            <h3>内容確認後に制作開始</h3>
+            <p>申込み内容を確認し、制作条件を整理したうえで制作を開始します。</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-label">STEP 4</span>
+            <h3>完成データをPDF・PNGで納品</h3>
+            <p>完成後、PDF・PNGデータとして納品します。軽微な修正は1回まで含みます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">CONTACT</span>
+          <h2 class="section-title">連絡先</h2>
+          <p class="section-text">通常の1枚制作は申込みフォームからお進みください。複数枚制作・継続制作のご相談はメールにて承ります。</p>
+        </div>
+
+        <div class="guide-grid">
+          <div class="contact-info-box">
+            <h3>RE:BASE企画 連絡先</h3>
+            <ul class="contact-list">
+              <li>運営：株式会社陸自不動産</li>
+              <li>電話番号：<a href="tel:0957514599">0957-51-4599</a></li>
+              <li>E-mail：<a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a></li>
+            </ul>
+          </div>
+
+          <div class="form-items">
+            <h3>申込みフォームで確認する項目</h3>
+            <ul class="form-list">
+              <li>お名前・メールアドレス</li>
+              <li>会社名・店舗名</li>
+              <li>業種</li>
+              <li>希望するサンプルタイプ</li>
+              <li>漫画広告で伝えたい内容</li>
+              <li>主題にしたいアピールポイント</li>
+              <li>QRコードにするリンク先</li>
+              <li>希望納期</li>
+              <li>掲載素材の有無</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="price-cta">
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+          </div>
+          <p class="small-note">
+            複数枚の広告制作、法人・店舗向けの継続制作をご希望の場合は、下記メールにてご相談ください。<br>
+            <a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notice" id="notice">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">NOTES</span>
+          <h2 class="section-title">注意事項</h2>
+          <p class="section-text">制作前に下記内容をご確認ください。</p>
+        </div>
+
+        <div class="notice-box">
+          <ul class="notice-list">
+            <li>作風はサンプル画像を基準に調整しますが、完全一致を保証するものではありません。</li>
+            <li>QRコード掲載は原則1か所です。</li>
+            <li>納品形式はPDF・PNGを基本とします。</li>
+            <li>支払い方法は銀行振込のみです。</li>
+            <li>制作開始後のキャンセル・返金は応じかねます。</li>
+            <li>内容量が多い場合、大幅な構成変更が必要な場合、修正2回目以降は別途相談となります。</li>
+            <li>誇大広告、公序良俗に反する内容、権利侵害のおそれがある内容は制作対象外です。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="law">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">LEGAL</span>
+          <h2 class="section-title">特定商取引法に基づく表記</h2>
+        </div>
+
+        <div class="law-card">
+          <table class="law-table">
+            <tbody>
+              <tr>
+                <th>販売事業者</th>
+                <td>株式会社陸自不動産</td>
+              </tr>
+              <tr>
+                <th>運営ブランド</th>
+                <td>RE:BASE.design</td>
+              </tr>
+              <tr>
+                <th>運営企画</th>
+                <td>RE:BASE企画</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>〒856-0805 長崎県大村市竹松本町840番地9号2F</td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td><a href="tel:0957514599">0957-51-4599</a></td>
+              </tr>
+              <tr>
+                <th>メールアドレス</th>
+                <td><a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a></td>
+              </tr>
+              <tr>
+                <th>販売価格</th>
+                <td>A4漫画広告チラシ制作 1枚 10,000円</td>
+              </tr>
+              <tr>
+                <th>支払方法</th>
+                <td>銀行振込のみ</td>
+              </tr>
+              <tr>
+                <th>支払時期</th>
+                <td>制作開始前に指定口座へ振込</td>
+              </tr>
+              <tr>
+                <th>役務提供時期</th>
+                <td>内容確認後、個別に案内</td>
+              </tr>
+              <tr>
+                <th>キャンセル・返金</th>
+                <td>制作開始後のキャンセル・返金は応じかねます。</td>
+              </tr>
+              <tr>
+                <th>追加料金</th>
+                <td>大幅な構成変更、複数QRコード、修正2回目以降、急ぎ納品は別途相談</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <strong>RE:BASE.design</strong>
+            <span>RE:BASE企画／運営：株式会社陸自不動産</span>
+            <span>電話番号：<a href="tel:0957514599">0957-51-4599</a></span>
+            <span>E-mail：<a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a></span>
+          </div>
+
+          <nav class="footer-links" aria-label="フッターリンク">
+            <a href="#law">特定商取引法に基づく表記</a>
+            <a href="https://www.rikujifudosan.net/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+            <a href="#samples">サンプルカードを見る</a>
+            <a href="#price">料金案内を見る</a>
+            <a href="#contact">連絡先を見る</a>
+          </nav>
+        </div>
+
+        <div class="copyright">Copyright © RE:BASE.design All Rights Reserved.</div>
+      </div>
+    </footer>
+
+    <section class="final-cta" id="final-cta">
+      <div class="container">
+        <div class="final-cta-box">
+          <span class="section-label">APPLICATION</span>
+          <h2>漫画広告で、伝わりにくい魅力を読みやすく。</h2>
+          <p>制作内容が固まっていない場合も、フォーム内で「相談しながら決めたい」を選択できます。</p>
+
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+          </div>
+
+          <p class="small-note">
+            複数枚の広告制作、法人・店舗向けの継続制作をご希望の場合は、下記メールにてご相談ください。<br>
+            <a class="mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=rebase.project@gmail.com&su=%E6%BC%AB%E7%94%BB%E5%BA%83%E5%91%8A%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener noreferrer">rebase.project@gmail.com</a>
+          </p>
+
+          <p class="small-note">支払い方法は銀行振込のみです。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const internalLinks = document.querySelectorAll('a[href^="#"]');
+
+      internalLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          const targetId = link.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+      });
+
+      function testImage(src) {
+        return new Promise(function (resolve) {
+          const tester = new Image();
+
+          tester.onload = function () {
+            resolve(src);
+          };
+
+          tester.onerror = function () {
+            resolve(null);
+          };
+
+          tester.src = src + "?v=" + Date.now();
+        });
+      }
+
+      async function loadSmartImages() {
+        const smartImages = document.querySelectorAll(".smart-img");
+
+        for (const image of smartImages) {
+          const srcListText = image.getAttribute("data-srcs");
+          if (!srcListText) continue;
+
+          const candidates = srcListText
+            .split("|")
+            .map(function (src) {
+              return src.trim();
+            })
+            .filter(Boolean);
+
+          let foundSrc = null;
+
+          for (const src of candidates) {
+            const result = await testImage(src);
+            if (result) {
+              foundSrc = result.replace(/\?v=.*$/, "");
+              break;
+            }
+          }
+
+          if (foundSrc) {
+            image.src = foundSrc;
+            image.style.display = "block";
+          } else {
+            const frame = image.closest(".image-frame, .design-example-image");
+
+            image.remove();
+
+            if (frame) {
+              const errorBox = document.createElement("div");
+              errorBox.className = "image-error";
+              errorBox.innerHTML = "画像ファイルが見つかりません。<br>imagesフォルダ内のファイル名を確認してください。";
+              frame.appendChild(errorBox);
+            }
+          }
+        }
+      }
+
+      loadSmartImages();
+    })();
+  </script>
+</body>
+</html>
