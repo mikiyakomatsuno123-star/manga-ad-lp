@@ -557,6 +557,44 @@
       font-weight: 620;
     }
 
+    .sample-side-promo-card {
+      grid-column: span 2;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid rgba(16, 32, 51, 0.1);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(16, 32, 51, 0.1);
+      min-height: 100%;
+    }
+
+    .sample-side-banner-media {
+      min-height: 360px;
+      border-radius: 0;
+      background: var(--white);
+    }
+
+    .sample-side-banner-media img {
+      object-fit: contain;
+      background: var(--white);
+      padding: 12px;
+    }
+
+    .sample-side-banner-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 18px 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #fff8ef 100%);
+      border-top: 1px solid rgba(242, 140, 40, 0.18);
+      text-align: center;
+    }
+
+    .sample-side-banner-action .btn {
+      min-width: 220px;
+    }
+
     .design-example {
       margin: 54px 0 0;
       padding: 34px;
@@ -979,6 +1017,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .sample-side-promo-card {
+        grid-column: 1 / -1;
+      }
+
       .design-example-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1022,6 +1064,10 @@
       .steps,
       .design-example-grid {
         grid-template-columns: 1fr;
+      }
+
+      .sample-side-banner-media {
+        min-height: 260px;
       }
 
       .design-example {
@@ -1372,6 +1418,18 @@
                 <div class="meta-row"><dt>対象例</dt><dd>アート系サービス、クリエイター、ブランディング重視の商品、高価格帯サービスなど</dd></div>
                 <div class="meta-row"><dt>目的</dt><dd>独自性や世界観を印象づける</dd></div>
               </dl>
+            </div>
+          </article>
+
+          <article class="sample-side-promo-card" aria-label="講座資料請求バナー">
+            <div class="image-frame sample-side-banner-media">
+              <img
+                src="images/sample-side-banner.jpg"
+                alt="講座資料請求バナー"
+              >
+            </div>
+            <div class="sample-side-banner-action">
+              <a class="btn btn-apply" href="https://docs.google.com/forms/d/1S9fI0qNRP9_i046YQUAtcl_PdA_b69QXPV7JbyhZqgw/viewform" target="_blank" rel="noopener noreferrer">講座資料請求</a>
             </div>
           </article>
         </div>
