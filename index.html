@@ -1138,6 +1138,98 @@
       font-weight: 650;
     }
 
+
+
+    .fullscreen-hover-target {
+      cursor: zoom-in;
+    }
+
+    .fullscreen-hover-target::after {
+      content: "カーソルで全画面表示";
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      z-index: 4;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(16, 32, 51, 0.82);
+      color: var(--white);
+      font-size: 0.74rem;
+      font-weight: 950;
+      letter-spacing: 0.03em;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      pointer-events: none;
+    }
+
+    .fullscreen-hover-target:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fullscreen-image-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background: rgba(16, 32, 51, 0.82);
+      opacity: 0;
+      transition: opacity 0.16s ease;
+      pointer-events: none;
+    }
+
+    .fullscreen-image-backdrop.is-visible {
+      opacity: 1;
+    }
+
+    .fullscreen-image-preview {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      width: 100vw;
+      height: 100vh;
+      padding: 28px;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      justify-items: center;
+      opacity: 0;
+      transform: scale(0.985);
+      transition: opacity 0.16s ease, transform 0.16s ease;
+      pointer-events: none;
+    }
+
+    .fullscreen-image-preview.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .fullscreen-image-preview img {
+      position: static;
+      width: auto;
+      height: auto;
+      max-width: calc(100vw - 56px);
+      max-height: calc(100vh - 96px);
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    .fullscreen-image-caption {
+      max-width: min(92vw, 980px);
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--navy);
+      font-size: 0.9rem;
+      font-weight: 950;
+      text-align: center;
+      line-height: 1.45;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
+
     .image-error {
       display: grid;
       place-items: center;
@@ -1989,7 +2081,109 @@
         }
       }
 
-      loadSmartImages();
+
+      function setupFullscreenHoverPreview() {
+        const selectorParts = [
+          '[data-srcs*="hero-image"]',
+          '[data-srcs*="hero.jpg"]',
+          '[data-srcs*="hero.png"]',
+          '[data-srcs*="sample-01"]',
+          '[data-srcs*="sample-02"]',
+          '[data-srcs*="sample-03"]',
+          '[data-srcs*="sample-04"]',
+          '[data-srcs*="sample-05"]',
+          '[data-srcs*="sample-06"]',
+          '[data-srcs*="sample-07"]',
+          '[data-srcs*="sample-08"]',
+          '[data-srcs*="sample-09"]',
+          '[data-srcs*="sample-10"]',
+          'img[src*="sample-side-banner"]'
+        ];
+
+        const targetImages = Array.from(document.querySelectorAll(selectorParts.join(',')))
+          .filter(function (image) {
+            return image && image.tagName && image.tagName.toLowerCase() === 'img';
+          });
+
+        if (!targetImages.length) return;
+
+        const backdrop = document.createElement('div');
+        backdrop.className = 'fullscreen-image-backdrop';
+
+        const preview = document.createElement('div');
+        preview.className = 'fullscreen-image-preview';
+        preview.setAttribute('aria-hidden', 'true');
+
+        const previewImage = document.createElement('img');
+        previewImage.alt = '';
+
+        const caption = document.createElement('div');
+        caption.className = 'fullscreen-image-caption';
+
+        preview.appendChild(previewImage);
+        preview.appendChild(caption);
+        document.body.appendChild(backdrop);
+        document.body.appendChild(preview);
+
+        function getActualImageSource(image) {
+          if (image.currentSrc) return image.currentSrc;
+          if (image.src) return image.src;
+
+          const srcListText = image.getAttribute('data-srcs');
+          if (!srcListText) return '';
+
+          const candidates = srcListText
+            .split('|')
+            .map(function (src) { return src.trim(); })
+            .filter(Boolean);
+
+          return candidates[0] || '';
+        }
+
+        function showFullscreenPreview(image) {
+          const src = getActualImageSource(image);
+          if (!src) return;
+
+          const altText = image.getAttribute('alt') || '画像プレビュー';
+          previewImage.src = src;
+          previewImage.alt = altText;
+          caption.textContent = altText + '｜カーソルを外すと戻ります';
+          backdrop.classList.add('is-visible');
+          preview.classList.add('is-visible');
+          preview.setAttribute('aria-hidden', 'false');
+        }
+
+        function hideFullscreenPreview() {
+          backdrop.classList.remove('is-visible');
+          preview.classList.remove('is-visible');
+          preview.setAttribute('aria-hidden', 'true');
+        }
+
+        targetImages.forEach(function (image) {
+          const frame = image.closest('.image-frame, .design-example-image');
+          if (!frame) return;
+
+          frame.classList.add('fullscreen-hover-target');
+
+          frame.addEventListener('mouseenter', function () {
+            showFullscreenPreview(image);
+          });
+
+          frame.addEventListener('mouseleave', hideFullscreenPreview);
+          frame.addEventListener('focusin', function () {
+            showFullscreenPreview(image);
+          });
+          frame.addEventListener('focusout', hideFullscreenPreview);
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            hideFullscreenPreview();
+          }
+        });
+      }
+
+      loadSmartImages().then(setupFullscreenHoverPreview);
     })();
   </script>
 </body>
