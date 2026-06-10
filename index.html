@@ -1271,6 +1271,49 @@
       border: 2px dashed rgba(242, 140, 40, 0.45);
     }
 
+
+    .movie-section {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(242, 140, 40, 0.18), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #fff8ef 100%);
+    }
+
+    .movie-card {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid rgba(16, 32, 51, 0.1);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: var(--strong-shadow);
+    }
+
+    .youtube-frame {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 24px;
+      background: var(--navy);
+      box-shadow: 0 16px 34px rgba(16, 32, 51, 0.16);
+    }
+
+    .youtube-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .movie-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
     @media (max-width: 1080px) {
       .header-nav {
         display: none;
@@ -1382,6 +1425,7 @@
       </a>
 
       <nav class="header-nav" aria-label="主要メニュー">
+        <a href="#movie">動画</a>
         <a href="#overview">サービス概要</a>
         <a href="#samples">サンプル</a>
         <a href="#price">料金</a>
@@ -1458,6 +1502,28 @@
             <div class="mini-pill">修正1回まで</div>
           </div>
         </aside>
+      </div>
+    </section>
+
+
+
+    <section class="section movie-section" id="movie">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">MOVIE</span>
+          <h2 class="section-title">まず動画で、漫画広告の雰囲気を確認</h2>
+          <p class="section-text">ファーストビュー直下に動画を配置し、LPを開いた直後にサービスの魅力を直感的に伝えます。文章を読む前に制作イメージを把握できるため、申込みへの導線を強めます。</p>
+        </div>
+
+        <div class="movie-card">
+          <div class="youtube-frame">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZYNQuwshWAM?si=T-LimPdkE4Cuq9Ns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="movie-note">再生ボタンを押すと、YouTube動画がLP内で再生されます。動画を見た後にすぐ申し込めるよう、下に申込みボタンを配置しています。</p>
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-apply" href="https://docs.google.com/forms/d/e/1FAIpQLSfUcAVQX_M8_EqI7JVQZXIftd1jdujkVdJYD1OespuyeTRWDg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お申込み</a>
+          </div>
+        </div>
       </div>
     </section>
 
